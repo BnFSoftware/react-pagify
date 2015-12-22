@@ -193,7 +193,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var page = o.page || 0;
 	    var perPage = o.perPage;
 
-	    var amountOfPages = o.perPage <= data.length ? 1 : Math.ceil(data.length / perPage);
+	    var amountOfPages = data.length <= o.perPage ? 1 : Math.ceil(data.length / perPage);
 	    var startPage = page < amountOfPages ? page : 0;
 
 	    return {
