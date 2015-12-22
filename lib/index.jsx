@@ -133,7 +133,7 @@ function paginate(data, o) {
     var page = o.page || 0;
     var perPage = o.perPage;
 
-    var amountOfPages = Math.ceil(data.length / perPage);
+    var amountOfPages = (o.perPage <= data.length) ? 1 : Math.ceil(data.length / perPage);
     var startPage = page < amountOfPages? page: 0;
 
     return {
